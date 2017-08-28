@@ -116,6 +116,8 @@ let img = document.getElementById("image");
     }
 document.getElementById("status").innerHTML= "Félicitations, tu as deviné le mot!";
 img.setAttribute("src", "img/victory.jpg");
+document.getElementById('victorySong').loop = true;
+document.getElementById('victorySong').play();
 }
 
 function popArr(){

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    
     <title> Hangman </title>
 
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
@@ -11,11 +12,13 @@
 </head>
 
 <body>
+
+
     <div id="box">
     <center><h2>Hangman</h2>
     <div>
-        <img id="image"></img>
-        <table>
+        <img id="image" style="padding-bottom:8%"></img>
+        <table id="game" bgcolor="#00ff00" height="20%" width="58%" >
             <form = onsubmit="return guessLetter()">
 
                     <tr>
@@ -67,7 +70,7 @@
 
 <div>
 <form>
-<table border="5" height="30%" width="50%" cellpadding="4" cellspacing="3" id="table2">
+<table border="5" height="20%" width="58%" cellpadding="4" cellspacing="3" id="table2">
                 <tr>
                         <label for="History"><td rowspan="2" style="text-align:left;vertical-align:top;padding:5;">History: <p id="History"></p></td></label>
                     </tr>
@@ -85,7 +88,12 @@
 
 </div>
     </div>
+</div>
 </center>
+
+<div  style="width:300px;vertical-align:top;font-family: Arial;font-size:9pt;line-height: normal;float:right;color:white">
+        <a rel="license" href="//responsivevoice.org/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/120x31.png" style="float:right;padding-left:2px;color:white" /></a><span xmlns:dct="https://purl.org/dc/terms/" property="dct:title"><a href="//responsivevoice.org/" target="_blank" title="ResponsiveVoice Text To Speech" style="color:white">ResponsiveVoice</a></span> used under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" style="color: white" title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License">Non-Commercial License</a></div>
+        <div style="clear:both;">&nbsp;</div></align>
 </body>
 
 </html>

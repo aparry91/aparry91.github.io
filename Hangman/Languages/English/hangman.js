@@ -121,7 +121,8 @@ let img = document.getElementById("image");
 
 document.getElementById("status").innerHTML= "Congratulations you guessed the word!";
 img.setAttribute("src", "img/victory.jpg");
-document.getElementById('victorySong').play()
+document.getElementById('victorySong').loop = true;
+document.getElementById('victorySong').play();
 }
 
 
