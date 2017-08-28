@@ -1,0 +1,95 @@
+<!DOCTYPE html5>
+<html>
+
+<head>
+    <title> le Pendu </title>
+
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script type="text/javascript" src="Languages/Français/HangmanFR.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/hangman.css">
+
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="box">
+    <center><h2>le Pendu</h2>
+    <div>
+        <img id="image"></img>
+        <table>
+                    <form = onsubmit="return guessLetter()">
+                    <tr>
+                        
+                        <td><label for="characters">Jeu Mot: </label></td>
+                        <td><center><p id="characters"><h3> </h3></p></center></td>
+                        <td></td>
+                <td>
+                    <div align='right'><input type="button" onclick="reloadGame()" value="Réinitialise"></div>
+                </td>
+                        <td></td>
+                    </tr>
+            <tr>
+                <td><label for="Guess">Devine Lettre:  </label></td>
+                <td><center><input type="text" id="Guess".toUppercase() name="Guess" style="text-transform: uppercase"></center></td>
+                <td></td>
+                <td>
+                    <div align='right'><input type="button" onclick="guessLetter()" value="Devine"></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><center><h4><p id="status"></p></center></h4></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><center><img id="lives"></img></center></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+                            <td></td>
+                            <td>
+                                <p id=spacing2>
+                                <a href="Hangman.html" id="element1" class="button">English</a>
+                                <a href="HangmanFR.html" id="element2" class="button" >Français</a></p></td>
+                            <td></td>
+                    <td>
+                    </td>
+                            <td></td>
+                        </tr>
+                    </form>
+                    </table>
+                        <p id="spacing1"></p>      
+                        
+        
+        <div>
+        <form>
+        <table border="5" height="30%" width="50%" cellpadding="4" cellspacing="3" id="table2">
+                        <tr>
+                                <label for="History"><td rowspan="2" style="text-align:left;vertical-align:top;padding:5;">Histoire: <p id="History"></p></td></label>
+                            </tr>
+                        </div>
+                    </form>
+                </table>
+        
+                            <audio id="victorySong">
+                                    <source src="music/music.mp3">
+                                  </audio>
+                                   
+                                  
+                                  
+                            
+        
+        </div>
+            </div>
+        </center>
+        </body>
+        
+        </html>
