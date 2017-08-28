@@ -18,6 +18,7 @@ request.onload = function () {
 
 function end() {
     responsiveVoice.speak("You have reached the end of the line buddy. Insert brutal hanging here.");
+    document.getElementById("status").innerHTML= "You lost. The word was: " + chosenWord + ", better luck next time!"
 }
 
 function updateHangman() {
@@ -99,6 +100,11 @@ function printStored(){
     document.getElementById("characters").innerHTML = (winningPhrase.join(" "));
 }
 
+function clearBox(){
+    document.getElementById("Guess").value = "";
+    console.log("CLEARING.")
+}
+
 function Pos(){
 let n = document.getElementById("Guess").value.toUpperCase();
 for (let i = 0 ; i < chosenWord.length; i++)
@@ -112,10 +118,13 @@ let img = document.getElementById("image");
     if (winningPhrase[i] === '_') {
        return;
     }
+
 document.getElementById("status").innerHTML= "Congratulations you guessed the word!";
 img.setAttribute("src", "img/victory.jpg");
 document.getElementById('victorySong').play()
 }
+
+
 
 function popArr(){
     for (i=0; chosenWord.length; i++){
@@ -174,9 +183,11 @@ function guessLetter() {
     return false;
 }
 
+  
 document.onsubmit = enter;
 function enter(e) {
-if (e.which == 13) { 
+if (e.which == 13) {
     guessLetter();
 }
+    clearBox();
 }

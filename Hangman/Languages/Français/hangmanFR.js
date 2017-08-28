@@ -18,6 +18,8 @@ request.onload = function () {
 
 function end() {
     responsiveVoice.speak("Tu as atteint le bout de la ligne, mon ami. Insérez pendaison brutale ici.", "French Female");
+    
+    document.getElementById("status").innerHTML= "Tu as perdu. Le mot était: " + chosenWord + ", Meilleur chance la prochaine fois!"
 }
 
 function updateHangman() {
@@ -112,7 +114,7 @@ let img = document.getElementById("image");
     if (winningPhrase[i] === '_') {
        return;
     }
-document.getElementById("status").innerHTML= "Congratulations you guessed the word!";
+document.getElementById("status").innerHTML= "Félicitations, tu as deviné le mot!";
 img.setAttribute("src", "img/victory.jpg");
 }
 
@@ -132,8 +134,13 @@ document.onsubmit = enter;
 function enter(e) {
 if (e.which == 13) { 
     guessLetter();
-    document.getElementById("Guess").reset();
 }
+    clearBox();
+}
+
+function clearBox(){
+    document.getElementById("Guess").value = "";
+    console.log("CLEARING.")
 }
 
 function guessLetter() {
