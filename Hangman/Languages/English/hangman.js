@@ -24,27 +24,27 @@ function updateHangman() {
     let img = document.getElementById("image");
 
     if (lives === 10) {
-        img.setAttribute("src", "Hangman/img/hm.png");
+        img.setAttribute("src", "img/hm.png");
     } else if (lives === 9) {
-        img.setAttribute("src", "Hangman/img/hm1.png");
+        img.setAttribute("src", "img/hm1.png");
     } else if (lives === 8) {
-        img.setAttribute("src", "Hangman/img/hm2.png");
+        img.setAttribute("src", "img/hm2.png");
     } else if (lives === 7) {
-        img.setAttribute("src", "Hangman/img/hm3.png");
+        img.setAttribute("src", "img/hm3.png");
     } else if (lives === 6) {
-        img.setAttribute("src", "Hangman/img/hm4.png");
+        img.setAttribute("src", "img/hm4.png");
     } else if (lives === 5) {
-        img.setAttribute("src", "Hangman/img/hm5.png");
+        img.setAttribute("src", "img/hm5.png");
     } else if (lives === 4) {
-        img.setAttribute("src", "Hangman/img/hm6.png");
+        img.setAttribute("src", "img/hm6.png");
     } else if (lives === 3) {
-        img.setAttribute("src", "Hangman/img/hm7.png");
+        img.setAttribute("src", "img/hm7.png");
     } else if (lives === 2) {
-        img.setAttribute("src", "Hangman/img/hm8.png");
+        img.setAttribute("src", "img/hm8.png");
     } else if (lives === 1) {
-        img.setAttribute("src", "Hangman/img/hm9.png");
+        img.setAttribute("src", "img/hm9.png");
     } else if (lives === 0) {
-        img.setAttribute("src", "Hangman/img/hm10.png");
+        img.setAttribute("src", "img/hm10.png");
         end();
     }
 }
@@ -53,27 +53,27 @@ function updateLives() {
     let img2 = document.getElementById("lives");
 
     if (lives === 10) {
-        img2.setAttribute("src", "Hangman/img/Life10.png");
+        img2.setAttribute("src", "img/Life10.png");
     } else if (lives === 9) {
-        img2.setAttribute("src", "Hangman/img/Life9.png");
+        img2.setAttribute("src", "img/Life9.png");
     } else if (lives === 8) {
-        img2.setAttribute("src", "Hangman/img/Life8.png");
+        img2.setAttribute("src", "img/Life8.png");
     } else if (lives === 7) {
-        img2.setAttribute("src", "Hangman/img/Life7.png");
+        img2.setAttribute("src", "img/Life7.png");
     } else if (lives === 6) {
-        img2.setAttribute("src", "Hangman/img/Life6.png");
+        img2.setAttribute("src", "img/Life6.png");
     } else if (lives === 5) {
-        img2.setAttribute("src", "Hangman/img/Life5.png");
+        img2.setAttribute("src", "img/Life5.png");
     } else if (lives === 4) {
-        img2.setAttribute("src", "Hangman/img/Life4.png");
+        img2.setAttribute("src", "img/Life4.png");
     } else if (lives === 3) {
-        img2.setAttribute("src", "Hangman/img/Life3.png");
+        img2.setAttribute("src", "img/Life3.png");
     } else if (lives === 2) {
-        img2.setAttribute("src", "Hangman/img/Life2.png");
+        img2.setAttribute("src", "img/Life2.png");
     } else if (lives === 1) {
-        img2.setAttribute("src", "Hangman/img/Life1.png");
+        img2.setAttribute("src", "img/Life1.png");
     } else if (lives === 0) {
-        img2.setAttribute("src", "Hangman/img/dead.png");
+        img2.setAttribute("src", "img/dead.png");
     }
 }
 
