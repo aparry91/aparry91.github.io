@@ -1,0 +1,80 @@
+<!Doctype html>
+<html>
+
+
+<head>
+    <script = "javascript">
+        var reqURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+        var br = document.createElement("br");
+        var request = new XMLHttpRequest();
+        request.open('GET', reqURL);
+        request.responseType = 'json';
+        request.send();
+        request.onload = function () {
+            addInfo();
+            memberInfo();
+        }
+
+
+        //requests the JSON data for the first part of the document
+        function addInfo() {
+            var reqData = request.response;
+            var sName = document.createElement('h2');
+            sName.textContent = reqData['squadName'];
+            document.getElementsByTagName('p')[0].appendChild(sName);
+            var otherInfo = document.createElement('h4')
+            otherInfo.textContent = "Home town: " + reqData['homeTown'] + ", ";
+            otherInfo.textContent += "formed: " + reqData['formed'] + ", ";
+            otherInfo.textContent += "secret base: " + reqData['secretBase'] + ". ";
+            document.getElementsByTagName('p')[1].appendChild(otherInfo);
+
+
+
+            var memberInfo = document.createElement('h4')
+
+            	if (reqData['active'] === "true") {
+               		memberInfo.textContent += " Membership: Active.";
+            		} else {
+                		memberInfo.textContent += " Membership: Dormant. ";
+            }
+            document.getElementsByTagName('p')[2].appendChild(memberInfo);
+        }
+
+
+
+        //requests the JSON data for the second part of the document in an additional array, with powers in another array
+        function memberInfo() {
+            var newDataReq = request.response;
+            var mem = newDataReq['members'];
+           		mem.forEach((thing) => {
+                	var text = document.createElement('h4')
+                	var show = thing.powers;
+                		text.innerHTML += "Alias: " + thing.name + ",  " + "Age: " + thing.age + ",  " + "Secret Identity:  " +
+                    	thing.secretIdentity + ", Powers:   ";
+                      	show.forEach((stuff) => {
+                    	text.innerHTML += stuff + ", ";
+                })
+
+                document.getElementsByTagName('p')[3].appendChild(text);
+
+                          })
+
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <div id="output">
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+
+    </div>
+</body>
+
+
+</html>

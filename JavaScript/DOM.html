@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<title> Page Title </title>
+
+<head>
+    <style>
+        #myDIV {
+            border: 1px solid black;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<script type="text/javascript">
+    function createParagraph() {
+        var para = document.createElement('P');
+        para.setAttribute("id", "para");
+        para.textContent = "text";
+        document.getElementById("myDIV").append(para);
+        console.log("paragraph created");
+    }
+
+    function addText() {
+        var input = document.getElementById("inputText").value;
+        para.textContent = (input);
+    }
+
+    function deleteParagraph(para) {
+        document.getElementById("para").remove();
+        console.log("paragraph deleted");
+    }
+
+</script>
+
+<body>
+
+    <div id="myDIV">
+        A DIV element
+    </div>
+
+    <input type="button" value="create" onclick="createParagraph()" />
+    <input type="button" value="delete" onclick="deleteParagraph()" />
+    <input type="text" ID="inputText" placeholder="insert text" />
+    <input type="button" value="addText" onclick="addText()" placeholder="<add text here>" />
+</body>
+
+</html>

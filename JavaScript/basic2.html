@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Page Title </title>
+
+<script type="text/javascript">
+
+function taskOne(numOne) {
+	return (numOne * numOne)
+}
+
+function taskTwo(numUno,numDos,numTres) {
+	return (numUno + numDos + numTres)
+}
+
+var taskThree = { 
+	name: "Adam", 
+	age:26, 
+	occupation:"Consultant" 
+}
+console.log(taskThree.name, taskThree.age, taskThree.occupation)
+
+function sayHello() {
+		alert("Welcome to my JS portfolio.");
+}
+
+function outputAge(){
+	alert("Current age is: " + taskThree.age + ".");
+}
+
+function incAge(){
+	alert("Current age is: " + taskThree.age + ". Now increasing age by 1.");
+	taskThree.age += 1;
+	alert("Age was increased. New age is: " + taskThree.age)
+}
+
+function decAge(){
+	alert("Current age is: " + taskThree.age + ". Now decreasing age by 1.");
+	taskThree.age -= 1;
+	alert("Age was decreased. New age is: " + taskThree.age)
+}
+
+</script>
+
+</head>
+
+<body>
+<input type="button" value="this" onclick="sayWelcome()"/>
+<input type="button" value="outputAge" onclick="outputAge()"/>
+<input type="button" value="incAge" onclick="incAge()"/>
+<input type="button" value="decAge" onclick="decAge()"/>
+</body>
+
+</html>

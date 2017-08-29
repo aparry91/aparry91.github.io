@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Page Title </title>
+
+<script type="text/javascript">
+
+
+function run(count, threeWord, fiveWord){
+for(var i = 1; i< count; i++)
+{
+	checkDiv(i, count, threeWord, fiveWord);
+	console.log(i)
+}
+}
+
+function checkDiv(i, count, threeWord, fiveWord){
+	if ((i % 3 === 0) && (i % 5 === 0)) {
+		console.log("FizzBuzz");
+	}	else if (i % 3 === 0) {
+		console.log(threeWord);
+	} 	else if (i % 5 === 0) {
+		console.log(fiveWord);
+	}
+
+}
+
+function submitForm(){
+	var count = document.getElementById("setCount").value;
+	var threeWord = document.getElementById("setDivThreeWord").value;
+	var fiveWord = document.getElementById("setDivFiveWord").value;
+	alert("Function will now loop to number: " + count);
+	alert("Function will now print: " + threeWord + ", when divisible by 3.");
+	alert("Function will now print: " + fiveWord + ", when divisible by 5.");
+
+	run(count, threeWord, fiveWord);
+}
+
+</script>
+
+</head>
+
+<body>
+
+
+<form>
+<br>
+<i>Please fill out the following for to make your changes:</i>
+	<br><br>
+<table><tr><td>Loop Count: </td>
+	<td><input type="text" id="setCount" placeholder="<Enter number>" /></td>
+	</tr>
+	<tr>
+	<td>Div by Three Word: </td>
+	<td><input type="text" id="setDivThreeWord" placeholder="<Enter word>"/></td>
+	</tr>
+	<tr>
+	<td>Div by Five Word: </td>
+	<td><input type="text" id="setDivFiveWord" placeholder="<Enter word>"/></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td><p align=right>
+	<input type="button" onclick="submitForm()" value="Submit"/></p> </td>
+</form>
+
+
+</body>
+
+</html>

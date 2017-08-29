@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+
+    <label>Enter the name of the King you would like information on:</label>
+    <br>
+    <br>
+    <input type="text" id="searchBox" name="searchBox" placeholder="insert name">
+    <input type="button" onclick="searchKings()" value="Search">
+    <script>
+        var reqURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', reqURL);
+        request.responseType = 'json';
+        request.send();
+        request.onload = function () {
+        }
+
+        function searchKings() {
+            var king = request.response;
+
+            for (var i = 0; i < king.length; i++) {
+                if (document.getElementById("searchBox").value == king[i].nm) {
+                    document.getElementById("name").textContent = "Name: " + king[i].nm
+                    document.getElementById("city").textContent = "City: " + king[i].cty
+                    document.getElementById("house").textContent = "House: " + king[i].hse
+                    document.getElementById("years").textContent = "Years: " + king[i].yrs
+                }
+            }
+        }
+        function turnObjectToString(obj) {
+            var string = obj.nm + ", " + obj.cty + ", " + obj.hse + ", " + obj.yrs + ".";
+            return string;
+        }
+        function printAnswer(input) {
+            window.alert(input)
+            document.getElementById("result").innerHTML = input;
+        }
+    </script>
+    <br>
+    <br>
+    <br> The results will be populate below.
+    <p id="name"> Name: </p>
+    <p id="city"> City: </p>
+    <p id="house"> House: </p>
+    <p id="years"> Years: </p>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><label for="Guess Letter">Guess Letter:  </label></td>
+                <td><input type="text" id="Guess" name="Guess"></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div align='right'><input type="button" onclick="guessLetter()" value="Guess Letter"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div align='right'>
+                        <p id="guessList">eg. Guess A,
+                            <p></p>
+                            <p></p>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+    </div>
+</body>
+
+</html>

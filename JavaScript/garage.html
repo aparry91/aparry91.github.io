@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+    <html>
+        
+        <head>
+            <h2><u>Garage System</u></h2>
+            <script>
+                
+         let para = document.createElement("P");
+
+                function carMaker(make, model, reg, faults, bill) {
+                let car = { }
+                car.make = make.toUpperCase();
+                car.model = model.toUpperCase();
+                car.reg = reg.toUpperCase();
+                car.faults = faults;
+                return car;
+                }
+
+                let garage = { }
+                garage.cars = []
+                let newCar = garage.cars;
+                let c1 = carMaker("Jaguar", "S-Type", "H14DAM", 2);
+                newCar.push(c1);
+
+        console.log("New car is " + JSON.stringify(newCar[0], null, 2));
+
+        function checkIn(make, model, reg, faults) {
+            let car = carMaker(make, model, reg, faults);
+            garage.cars.push(car);
+        }
+
+        function checkOut(creg) {
+            let byReg = newCar.filter(function (car) {
+                return car.reg !== creg.toUpperCase();
+            });
+            newCar = byReg;
+        }
+
+        function outputList() {
+            let out = document.getElementById("outputList");
+            out.innerHTML = "";
+            newCar.forEach((o) => {
+
+                out.innerHTML += (o.make).toUpperCase() + ", " + (o.model).toUpperCase() + ", " + (o.reg).toUpperCase() + ", " + o.faults;
+                document.getElementById("outputList").appendChild(para);
+
+            })
+        }
+
+        function calculateBill(creg) {
+            newCar.map(function (car) {
+                if (creg.toUpperCase() === car.reg) {
+                    window.alert("The total to pay is, £" + car.faults * 25 + ".00");
+                }
+            })
+        }
+
+                function emptyGarage(){
+                        garage.cars = []
+                        console.log(garage.cars);
+                }
+
+
+
+            </script>
+        </head>
+        
+        <body>
+                <form>
+                        <div>
+                        <table>
+                            <tr>
+                                <td><label for="Make">Make:  </label></td>
+                                <td><input type="text" id="Make" name="Make"></td>
+                                <td></td>
+                                <td></td>
+                                <td><div align='right'><input type="button" onclick="emptyGarage()" value="Empty List"></div></td>
+                            </tr>
+                            <tr>
+                                <td><label for="Model">Model:  </label></td>
+                                <td><input type="text" id="Model" name="Model"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="Reg">Registration:  </label></td>
+                                <td><input type="text" id="Reg" name="Reg"></td>
+                            </tr>
+                                <td><label for="Faults">Faults:  </label></td>
+                                <td><input type="text" id="Faults" name="Faults"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="button" onclick="checkIn(Make.value, Model.value, Reg.value, Faults.value)" value="Create Car"><input type="button" onclick="outputList()" value="Show Garage"></td>
+                            </tr>
+                            <tr><td></td></tr>                            
+                            <tr><td></td></tr>                            
+                            <tr><td></td></tr>
+                            <tr>
+                                <td><label for="remove">Remove Car:  </label></td>
+                                <td><input type="text" id="remove" name="remove" placeholder="type Registration"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><div align='right'><input type="button" onclick="checkOut(remove.value)" value="Check Out"></div></td>
+                            </tr>         
+                            <tr><td></td></tr>                            
+                            <tr><td></td></tr>                            
+                            <tr><td></td></tr>                            
+                            <tr>
+                                <td><label for="Car Bill">Check Bill:  </label></td>
+                                <td><input type="text" id="Bill" name="Bill" placeholder="type Registration"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><div align='right'><input type="button" onclick="calculateBill(Bill.value)" value="Billing Cost" ></div></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><div align='right'><p id="outputList">Jaguar, S-Type, H14DAM, 2<p></p>Lotus, Elise, YK10YKM, 2<p></p></p></div></td>
+                            </tr>         
+                        </div>
+                        
+                
+                    </form>
+
+                    <form>
+                        <div><table>
+                        </table>
+                        </div>
+                    </form>
+    
+        </body>
+        
+        </html>
+    
+    
+    

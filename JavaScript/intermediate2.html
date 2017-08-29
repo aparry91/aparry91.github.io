@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Page Title </title>
+
+<script type="text/javascript">
+
+var number = 100;
+
+while (number != 1) {
+	if (number % 3 === 0) {
+        var number = number / 3;
+		console.log(number + ", is divisble by 3");
+
+	} else {
+            var number = (number + 1);
+            console.log("Needed to add one: " + number);
+            if (number % 3 != 0) {
+                var number = (number -2);
+            console.log("Needed to subtract one: " + number);
+            }
+	        console.log(number + ", is divisible by 3.")
+}
+}
+if (number === 1){
+    console.log()
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

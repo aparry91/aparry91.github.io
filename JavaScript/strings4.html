@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<title> Page Title </title>
+
+<head></head>
+
+<script type="text/javascript">
+    function getChar(data) {
+
+        var count = 0;
+
+        for (var i = 0; i < data.length - 2; i++) {
+            if (data.charAt(i) === data.charAt(i + 1) && data.charAt(i) === data.charAt(i + 2)) {
+                count++;
+                i + 2;
+
+            }
+        } console.log("The total number of triples is : " + count);
+    }
+
+    getChar("xxxdddd");
+
+</script>
+
+<body>
+</body>
