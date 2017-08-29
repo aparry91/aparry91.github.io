@@ -4,6 +4,7 @@
 <head>
     <title> le Pendu </title>
 
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <script type="text/javascript" src="Languages/Français/hangmanFR.js"></script>
 
@@ -19,7 +20,7 @@
     <div>
         <img id="image" style="padding-bottom:8%"></img>
         <table id="game" bgcolor="#00ff00" height="20%" width="58%" >
-                    <form = onsubmit="return guessLetter()">
+                    <form onsubmit="return guessLetter()">
                     <tr>
                         
                         <td><label for="characters">Jeu Mot: </label></td>
@@ -32,7 +33,7 @@
                     </tr>
             <tr>
                 <td><label for="Guess">Devine Lettre:  </label></td>
-                <td><center><input type="text" id="Guess".toUppercase() name="Guess" style="text-transform: uppercase" placeholder="<tapez une lettre>"></center></td>
+                <td><center><input type="text" id="Guess" name="Guess" style="text-transform: uppercase" placeholder="<tapez une lettre>"></center></td>
                 <td></td>
                 <td>
                     <div align='right'><input type="button" onclick="guessLetter();clearBox()" value="Devine"></div>

@@ -115,7 +115,7 @@ let img = document.getElementById("image");
        return;
     }
 document.getElementById("status").innerHTML= "Félicitations, tu as deviné le mot!";
-img.setAttribute("src", "img/victory.jpg");
+img.setAttribute("src", "img/victory.gif");
 document.getElementById('victorySong').loop = true;
 document.getElementById('victorySong').play();
 }
@@ -132,13 +132,6 @@ function popArr(){
     }
 }
 
-document.onsubmit = enter;
-function enter(e) {
-if (e.which == 13) { 
-    guessLetter();
-}
-    clearBox();
-}
 
 function clearBox(){
     document.getElementById("Guess").value = "";
@@ -148,6 +141,7 @@ function clearBox(){
 function guessLetter() {
     let n = document.getElementById("Guess").value.toUpperCase().charAt(0);
     let count = 0;
+    let Guess = document.getElementById('Guess')
     
 
     document.getElementById("History").innerHTML += n + ", ";
@@ -187,4 +181,13 @@ function guessLetter() {
         console.log("GAMEOVER")
     }
     return false;
+}
+
+document.onsubmit = enter;
+function enter(e) {
+if (e.which == 13) { 
+    guessLetter();
+}
+    clearBox();
+    return false
 }

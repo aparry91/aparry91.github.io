@@ -120,7 +120,7 @@ let img = document.getElementById("image");
     }
 
 document.getElementById("status").innerHTML= "Congratulations you guessed the word!";
-img.setAttribute("src", "img/victory.jpg");
+img.setAttribute("src", "img/victory.gif");
 document.getElementById('victorySong').loop = true;
 document.getElementById('victorySong').play();
 }
@@ -144,6 +144,7 @@ function popArr(){
 function guessLetter() {
     let n = document.getElementById("Guess").value.toUpperCase().charAt(0);
     let count = 0;
+    let Guess = document.getElementById('Guess')
 
     document.getElementById("History").innerHTML += n + ", ";
 
@@ -177,7 +178,6 @@ function guessLetter() {
         } else {
 
         }
-
     } else {
         console.log("GAMEOVER")
     }
@@ -191,4 +191,5 @@ if (e.which == 13) {
     guessLetter();
 }
     clearBox();
+    return false
 }

@@ -4,7 +4,7 @@
 <head>
     
     <title> Hangman </title>
-
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <script type="text/javascript" src="Languages/English/hangman.js"></script>
 
@@ -19,7 +19,7 @@
     <div>
         <img id="image" style="padding-bottom:8%"></img>
         <table id="game" bgcolor="#00ff00" height="20%" width="58%" >
-            <form = onsubmit="return guessLetter()">
+            <form  onsubmit="return guessLetter()">
 
                     <tr>
      
@@ -33,7 +33,7 @@
                     </tr>
             <tr>
                 <td><label for="Guess">Guess Letter:  </label></td>
-                <td><center><input type="text" id="Guess".toUppercase(); name="Guess" style="text-transform: uppercase" placeholder="<type one letter>"></center></td>
+                <td><center><input type="text" id="Guess" name="Guess" style="text-transform: uppercase" placeholder="<type one letter>"></center></td>
                 <td></td>
                 <td>
                     <div align='right'><input type="button" onclick="guessLetter();clearBox()" value="Guess"></div>
