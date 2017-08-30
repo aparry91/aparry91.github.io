@@ -4,6 +4,8 @@
 <head>
     <title> le Pendu </title>
 
+    
+    <meta name="viewport" content="initial-scale=0.40, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
     <script type="text/javascript" src="Languages/Français/hangmanFR.js"></script>
@@ -33,7 +35,7 @@
                     </tr>
             <tr>
                 <td><label for="Guess">Devine Lettre:  </label></td>
-                <td><center><input type="text" id="Guess" name="Guess" style="text-transform: uppercase" placeholder="<tapez une lettre>"></center></td>
+                <td><center><input type="text" autocomplete="off" id="Guess" name="Guess" style="text-transform: uppercase" placeholder="<tapez une lettre>"></center></td>
                 <td></td>
                 <td>
                     <div align='right'><input type="button" onclick="guessLetter();clearBox()" value="Devine"></div>
