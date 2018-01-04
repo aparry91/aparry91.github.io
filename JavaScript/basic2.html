@@ -31,16 +31,22 @@ function agePrompt() {
 }
 
 function incAge(){
-	taskThree.age += 1;
-    updateText();
-
+    if (taskThree.age == 100){
+        alert("This age editor does not allow you to go past 100.");
+    } else {
+        taskThree.age += 1;
+        updateText();
+    }
 }
 
 function decAge(){
-	taskThree.age -= 1;
-    updateText();
+    if (taskThree.age == 1){
+        alert("You can not be age 0");
+    } else {
+        taskThree.age -= 1;
+        updateText();
+    }
 }
-
 
 </script>
 
