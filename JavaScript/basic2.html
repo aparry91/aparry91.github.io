@@ -2,54 +2,56 @@
 <html>
 
 <head>
-<title> Page Title </title>
+<title> Task : Basic 2 - Age Edit </title>
 
 <script type="text/javascript">
 
-function taskOne(numOne) {
-	return (numOne * numOne)
-}
-
-function taskTwo(numUno,numDos,numTres) {
-	return (numUno + numDos + numTres)
-}
-
-var taskThree = { 
-	name: "Adam", 
-	age:26, 
-	occupation:"Consultant" 
+let taskThree = {
+	name: "Adam",
+	age: 26,
+	occupation:"Consultant"
 }
 console.log(taskThree.name, taskThree.age, taskThree.occupation)
 
-function sayHello() {
-		alert("Welcome to my JS portfolio.");
+function updateText() {
+let element = document.getElementById("id01");
+element.innerHTML = "Name: " + taskThree.name + ", Age: " + taskThree.age + ", Occupation: " + taskThree.occupation + ".";
 }
 
-function outputAge(){
-	alert("Current age is: " + taskThree.age + ".");
+function sayWelcome() {
+	alert("Welcome to my JavaScript Basic Task 2 example. \
+The functionality demonstrates the ability to alter a predefined age with increments or decrements of 1.");
+}
+
+function agePrompt() {
+    do{
+        taskThree.age = parseInt(window.prompt("Please enter a number from 1 to 100", ""), 10);
+    }while(isNaN(taskThree.age) || taskThree.age > 100 || taskThree.age < 1);
+    updateText();
 }
 
 function incAge(){
-	alert("Current age is: " + taskThree.age + ". Now increasing age by 1.");
 	taskThree.age += 1;
-	alert("Age was increased. New age is: " + taskThree.age)
+    updateText();
+
 }
 
 function decAge(){
-	alert("Current age is: " + taskThree.age + ". Now decreasing age by 1.");
 	taskThree.age -= 1;
-	alert("Age was decreased. New age is: " + taskThree.age)
+    updateText();
 }
+
 
 </script>
 
 </head>
 
-<body>
-<input type="button" value="this" onclick="sayWelcome()"/>
-<input type="button" value="outputAge" onclick="outputAge()"/>
-<input type="button" value="incAge" onclick="incAge()"/>
-<input type="button" value="decAge" onclick="decAge()"/>
+<body onload="sayWelcome(); agePrompt();">
+<center><h2><u>Basic 2 : Age Edit</u></h2></center>
+<center><h4 id="id01">Name: Adam, Age: 23, Occupation: IT Consultant</h4></center>
+
+<center><input type="button" value="Increase Age" onclick="incAge()"/>
+<input type="button" value="Decrease Age" onclick="decAge()"/></center>
 </body>
 
 </html>
