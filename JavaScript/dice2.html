@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Personal : Dice 2 </title>
+
+    <script type="text/javascript">
+
+let statDice = {
+	dieOne: 6,
+	dieTwo: 6,
+	dieThree: 6
+}
+
+let statList = {
+    str: 1,
+    dex: 1,
+    int: 1,
+    con: 1,
+    wis: 1,
+    cha: 1
+}
+
+let statListStored = {
+    str: 1,
+    dex: 1,
+    int: 1,
+    con: 1,
+    wis: 1,
+    cha: 1
+}
+
+let statPointTotal = 6;
+let statPointTotalStored = 6;
+let total = 18
+
+function updateText() {
+    let element = document.getElementById("id01");
+    element.innerHTML = "Points Total: " + statPointTotal + "<br><br>Str: " + statList.str + "<br>Dex: " + statList.dex + "<br>Int: " + statList.int + "<br>Con: " + statList.con + "<br>Wis: " + statList.wis + "<br>Cha: " + statList.cha;
+}
+
+function sayWelcome() {
+	alert("Welcome to my Personal Development task to simulate a stat page. \
+The functionality demonstrates the ability to utilise dice rolls on three six sided die's to create a stat sheet.");
+}
+
+function rollDice() {
+    statDice.dieOne = Math.floor((Math.random() * 6) +1);
+    statDice.dieTwo = Math.floor((Math.random() * 6) +1);
+    statDice.dieThree = Math.floor((Math.random() * 6) +1);
+    total = statDice.dieOne + statDice.dieTwo + statDice.dieThree;
+}
+
+function storeStats(){
+    statListStored.str = statList.str;
+    statListStored.dex = statList.dex;
+    statListStored.int = statList.int;
+    statListStored.con = statList.con;
+    statListStored.wis = statList.wis;
+    statListStored.cha = statList.cha;
+    statPointTotalStored = statPointTotal;
+}
+
+function recallStats(){
+    statList.str = statListStored.str;
+    statList.dex = statListStored.dex;
+    statList.int = statListStored.int;
+    statList.con = statListStored.con;
+    statList.wis = statListStored.wis;
+    statList.cha = statListStored.cha;
+    statPointTotal = statPointTotalStored;
+    updateText();
+    //console.log("Stored stats: " + statListStored.str, statListStored.dex, statListStored.int, statListStored.con, statListStored.wis, statListStored.cha);
+    //console.log("Current stats: " + statList.str, statList.dex, statList.int, statList.con, statList.wis, statList.cha);
+}
+
+function rollStats() {
+    rollDice();
+    statList.str = total;
+    rollDice();
+    statList.dex = total;
+    rollDice();
+    statList.int = total;
+    rollDice();
+    statList.con = total;
+    rollDice();
+    statList.wis = total;
+    rollDice();
+    statList.cha = total;
+    statPointTotal = (statList.str + statList.dex + statList.int + statList.con + statList.wis + statList.cha);
+    updateText();
+
+    //console.log("Stored stats: " + statListStored.str, statListStored.dex, statListStored.int, statListStored.con, statListStored.wis, statListStored.cha);
+    //console.log("Current stats: " + statList.str, statList.dex, statList.int, statList.con, statList.wis, statList.cha);
+}
+
+</script>
+
+</head>
+
+<body onload="sayWelcome();">
+<center><h2><u>Personal : Dice 1</u></h2></center>
+<center><h4 id="id01">Points Total: 0<br><br>Str: 1<br>Dex: 1<br>Int: 1<br>Con: 1<br>Wis: 1<br>Cha: 1</h4></center>
+
+<center><input type="button" value="Store" onclick="storeStats()"/>
+    <input type="button" value="Recall" onclick="recallStats()"/>
+    <input type="button" value="Roll Stats" onclick="rollStats()"/></center>
+</body>
+
+</html>

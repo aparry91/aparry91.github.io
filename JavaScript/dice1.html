@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Personal : Dice 1 </title>
+
+    <script type="text/javascript">
+
+let diceVars = {
+	dieOne: 6,
+	dieTwo: 6
+}
+console.log(diceVars.dieOne, diceVars.dieTwo)
+
+let total = 12
+
+function updateText() {
+    let element = document.getElementById("id01");
+    element.innerHTML = "Die One: " + diceVars.dieOne + ", Die Two: " + diceVars.dieTwo + ", Total: " + total + ".";
+}
+
+function sayWelcome() {
+	alert("Welcome to my Personal Development task to simulate dice rolls. \
+The functionality demonstrates the ability to utilise dice rolls on two six sided die's.");
+}
+
+function rollDice() {
+    diceVars.dieOne = Math.floor((Math.random() * 6) +1);
+    diceVars.dieTwo = Math.floor((Math.random() * 6) +1);
+    total = diceVars.dieOne + diceVars.dieTwo;
+    updateText();
+}
+
+</script>
+
+</head>
+
+<body onload="sayWelcome();">
+<center><h2><u>Personal : Dice 1</u></h2></center>
+<center><h4 id="id01">Die One: 6, Die Two: 6, Total: 12.</h4></center>
+
+<center><input type="button" value="Roll Dice" onclick="rollDice()"/></center>
+</body>
+
+</html>
