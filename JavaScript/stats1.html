@@ -87,6 +87,28 @@
       let abilities = 0;
       let abilitiesStored = 0;
 
+     class Stat {
+     constructor(name, value){
+     this.name = name
+     this.value = value
+
+      }
+      {
+      addPoint(){
+      this.value = this.value + 1
+      }
+      }
+
+      function StatList(){
+        this.str = new stat('Strength', 0)
+        this.dex = new stat('Strength', 0)
+        this.str = new stat('Strength', 0)
+        this.str = new stat('Strength', 0)
+
+
+      }
+
+
       let statDice = {
         dieOne: 6,
         dieTwo: 6,
@@ -197,15 +219,16 @@
         //console.log("Current stats: " + statList.str, statList.dex, statList.int, statList.con, statList.wis, statList.cha);
       }
 
-      function addPointStr() {
-      if (statList.str > 0) {
-      if ((abilities > 0) && (statList.str <= 17) && (statList.str >= 1)) {
-        statList.str += 1;
-        abilities -= 1;
-        updateAbilities();
-        updateStats();
-        }
-      }
+      function addPoint(stat) {
+      if (stat.value > 0) {
+          if ((abilities > 0) && (stat.value <= 17)) {
+            stat.value += 1;
+            updateStats();
+            abilities -= 1;
+            updateAbilities();
+            console.log(statList.i);
+            }
+          }
       }
 
             function addPointWis() {
@@ -345,7 +368,7 @@
     </div>
 
     <div class="side-by-side" align="right">
-        <input type="button" value="+" onclick="addPointStr()" /></br>
+        <input type="button" value="+" onclick="statList.str.addPoint" /></br>
         <input type="button" value="+" onclick="addPointDex()" /></br>
         <input type="button" value="+" onclick="addPointInt()" /></br>
         <input type="button" value="+" onclick="addPointCon()" /></br>
