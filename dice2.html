@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title> Personal : Dice 2 </title>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Adam Parry</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
 
     <style>
-
-    html {
-    overflow: hidden;
-}
 
       div.container-1 {
         margin: 0 auto;
@@ -24,7 +37,7 @@
         width: 40%;
         padding-left: 5%;
         box-sizing: border-box;
-        background-color: lightblue;
+        background-color: black;
       }
 
       div.container-3 {
@@ -48,8 +61,8 @@
         padding-left: 5%;
         padding-right: 5%;
         box-sizing: border-box;
-        background-color: lightblue;
-        line-height: 175%;
+        background-color: black;
+        line-height: 200%;
       }
 
       @media (min-width: 960px){
@@ -336,65 +349,140 @@
 
 </head>
 
-<body onload="sayWelcome();">
-<center>
-    <h2><u>Personal : Dice 2</u></h2></center>
-<div class="container-1">
-    <div class="total" align="left">
-        Abilities:
-    </div>
-    <div class="totalValue" align="center" id="id01">
-        0
-    </div>
-</div>
-<div class="container-2">
+<body id="page-top">
 
-    <div class="side-by-side" align="left">
-        Str:
-        <br/>Dex:
-        <br/>Int:</br>Con:</br>Wis:</br>Cha:</br>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Adam Parry</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#javascript">JavaScript</a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
 
-    <div class="side-by-side" style="float: left; width=30%; margin-right:5px"align="left" id="id02">
-        1</br>1</br>1</br>1</br>1</br>1</br>
+<!-- Intro Header -->
+<header class="masthead">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <br>
+                    <br>
+                    <br>            <br>
+                    <br>
+                    <br>
+                    <p class="intro-text">During my training I completed a series of projects, please find my projects based on their languages</p>
+                    <a href="#javascript" class="btn btn-circle js-scroll-trigger">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+</header>
 
-    <div class="side-by-side" align="right">
-        <input type="button" value="+" onclick="addPointStr()" /></br>
-        <input type="button" value="+" onclick="addPointDex()" /></br>
-        <input type="button" value="+" onclick="addPointInt()" /></br>
-        <input type="button" value="+" onclick="addPointCon()" /></br>
-        <input type="button" value="+" onclick="addPointWis()" /></br>
-        <input type="button" value="+" onclick="addPointCha()" /></br>
+<!-- JavaScript Section -->
+<section id="javascript" class="content-section text-center">
+    <div class="container" style="padding-top:80px">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <body onload="sayWelcome();">
+                <center>
+                    <h2><u>Personal : Dice 2</u></h2></center>
+                <div class="container-1">
+                    <div class="total" align="left">
+                        Abilities:
+                    </div>
+                    <div class="totalValue" align="center" id="id01">
+                        0
+                    </div>
+                </div>
+                <div class="container-2">
+
+                    <div class="side-by-side" align="left">
+                        Str:
+                        <br/>Dex:
+                        <br/>Int:</br>Con:</br>Wis:</br>Cha:</br>
+                    </div>
+
+                    <div class="side-by-side" style="float: left; width=30%; margin-right:5px"align="left" id="id02">
+                        1</br>1</br>1</br>1</br>1</br>1</br>
+                    </div>
+
+                    <div class="side-by-side" align="right">
+
+                        <button class="button button-circle button-tiny" onclick="addPointStr()"><i class="fa fa-plus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="addPointDex()"><i class="fa fa-plus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="addPointInt()"><i class="fa fa-plus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="addPointCon()"><i class="fa fa-plus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="addPointWis()"><i class="fa fa-plus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="addPointCha()"><i class="fa fa-plus"></i></button>
+                    </div>
+
+
+                    <div class="side-by-side" align="right">
+
+
+                        <button class="button button-circle button-tiny" onclick="minusPointStr()"><i class="fa fa-minus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="minusPointDex()"><i class="fa fa-minus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="minusPointInt()"><i class="fa fa-minus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="minusPointCon()"><i class="fa fa-minus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="minusPointWis()"><i class="fa fa-minus"></i></button>
+                        <button class="button button-circle button-tiny" onclick="minusPointCha()"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
+
+                <div class="container-3">
+                    <div class="total" align="left">
+                        Total Roll:
+                    </div>
+                    <div class="totalValue" align="center" id="id03">
+                        6
+                    </div>
+                </div>
+
+                <div class="container-4">
+                    <center>
+                        <input type="button" value="Store" onclick="storeStats()" />
+                        <input type="button" value="Recall" onclick="recallStats()" />
+                        <input type="button" value="Roll Stats" onclick="rollStats()" />
+                    </center>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-
-    <div class="side-by-side" align="right">
-        <input type="button" value="-" onclick="minusPointStr()" /></br>
-        <input type="button" value="-" onclick="minusPointDex()" /></br>
-        <input type="button" value="-" onclick="minusPointInt()" /></br>
-        <input type="button" value="-" onclick="minusPointCon()" /></br>
-        <input type="button" value="-" onclick="minusPointWis()" /></br>
-        <input type="button" value="-" onclick="minusPointCha()" /></br>
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; Adam Parry 2017</p>
     </div>
-</div>
+</footer>
 
-<div class="container-3">
-    <div class="total" align="left">
-        Total Roll:
-    </div>
-    <div class="totalValue" align="center" id="id03">
-        6
-    </div>
-</div>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/popper/popper.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-<div class="container-4">
-    <center>
-        <input type="button" value="Store" onclick="storeStats()" />
-        <input type="button" value="Recall" onclick="recallStats()" />
-        <input type="button" value="Roll Stats" onclick="rollStats()" />
-    </center>
-</div>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+<!-- Custom scripts for this template -->
+<script src="js/grayscale.min.js"></script>
 
 </body>
 
